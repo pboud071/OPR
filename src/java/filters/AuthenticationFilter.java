@@ -61,25 +61,25 @@ public class AuthenticationFilter implements Filter {
                 (ses == null || 
                 ((ses.getAttribute("User") == null) ||
                 (ses.getAttribute("Category").equals("agent") == false)))) {
-            String loginURL = req.getContextPath() + "/faces/index.xhtml";
+            String loginURL = req.getContextPath() + "/faces/public/welcome.xhtml";
             res.sendRedirect(loginURL);
         } else if (reqURI.contains("/customer/") && 
                 (ses == null || 
                 ((ses.getAttribute("User") == null) ||
-                ((ses.getAttribute("Category").equals("agent") == false) || (ses.getAttribute("Category").equals("customer") == false))))) {
-            String loginURL = req.getContextPath() + "/index.xhtml";
+                (ses.getAttribute("Category").equals("owner") == true)))) {
+            String loginURL = req.getContextPath() + "/faces/public/welcome.xhtml";
             res.sendRedirect(loginURL);
         } else if (reqURI.contains("/owner/") &&
                 (ses == null || 
                 ((ses.getAttribute("User") == null) ||
-                ((ses.getAttribute("Category").equals("agent") == false) || (ses.getAttribute("Category").equals("owner") == false))))) {
-            String loginURL = req.getContextPath() + "/index.xhtml";
+                (ses.getAttribute("Category").equals("customer") == true)))) {
+            String loginURL = req.getContextPath() + "/faces/public/welcome.xhtml";
             res.sendRedirect(loginURL);
         } else if (reqURI.contains("/agent/") &&
                 (ses == null || 
                 ((ses.getAttribute("User") == null) ||
                 (ses.getAttribute("Category").equals("agent") == false)))) {
-            String loginURL = req.getContextPath() + "/index.xhtml";
+            String loginURL = req.getContextPath() + "/faces/public/welcome.xhtml";
             res.sendRedirect(loginURL);
         } else {
             chain.doFilter(request, response);
