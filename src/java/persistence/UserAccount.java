@@ -14,7 +14,7 @@ import javax.persistence.Lob;
 
 /**
  *
- * @author ssome
+ * @author jeffreybettles
  */
 @Entity
 public class UserAccount implements Serializable {

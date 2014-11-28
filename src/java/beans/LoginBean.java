@@ -23,7 +23,7 @@ import persistence.UserAccount;
 
 /**
  *
- * @author ssome
+ * @author jeffreybettles
  */
 @Named(value = "loginBean")
 @RequestScoped

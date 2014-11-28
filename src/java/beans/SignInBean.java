@@ -23,7 +23,7 @@ import persistence.UserAccount;
 
 /**
  *
- * @author ssome
+ * @author jeffreybettles
  */
 @Named(value = "signInBean")
 @RequestScoped
@@ -35,6 +35,12 @@ public class SignInBean {
     private String email;
     private String category;
     private String password;
+    private String streetNum;
+    private String streetName;
+    private String city;
+    private String province;
+    private String country;
+    private String postalCode;
     @PersistenceContext(unitName = "OPRPU")
     private EntityManager em;
     @Resource
@@ -150,6 +156,90 @@ public class SignInBean {
      */
     public String getStatus() {
         return status;
+    }
+
+    /**
+     * @return the streetNum
+     */
+    public String getStreetNum() {
+        return streetNum;
+    }
+
+    /**
+     * @param streetNum the streetNum to set
+     */
+    public void setStreetNum(String streetNum) {
+        this.streetNum = streetNum;
+    }
+
+    /**
+     * @return the streetName
+     */
+    public String getStreetName() {
+        return streetName;
+    }
+
+    /**
+     * @param streetName the streetName to set
+     */
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    /**
+     * @return the city
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * @param city the city to set
+     */
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    /**
+     * @return the province
+     */
+    public String getProvince() {
+        return province;
+    }
+
+    /**
+     * @param province the province to set
+     */
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    /**
+     * @return the country
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * @param country the country to set
+     */
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    /**
+     * @return the postalCode
+     */
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    /**
+     * @param postalCode the postalCode to set
+     */
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
     
     public void persist(Object object) {
